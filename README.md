@@ -152,7 +152,7 @@ Calico può essere installato tramite due approcci principali:
 ```bash
 $ kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.29.2/manifests/tigera-operator.yaml
 $ kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.29.2/manifests/custom-resources.yaml
-$ kubectl get nodes -o wide  # Da eseguire anche sul worker
+$ kubectl get nodes -o wide  # Da eseguire anche sul worker --opzionale
 $ kubectl get pods -n calico-system -o wide
 $ ip route show
 $ kubectl get pods -A | grep -E "calico|flannel"
