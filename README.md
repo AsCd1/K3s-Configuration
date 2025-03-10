@@ -155,7 +155,7 @@ $ kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.29
 $ kubectl get nodes -o wide  # Da eseguire anche sul worker --opzionale
 $ kubectl get pods -n calico-system -o wide
 $ ip route show
-$ kubectl get pods -A | grep -E "calico|flannel"
+$ kubectl get pods -A | grep -E "calico|flannel" #flannel è presente di default se non si segue l'installazione pulita
 ```
 
 
