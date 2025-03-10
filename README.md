@@ -156,7 +156,7 @@ $ kubectl get nodes -o wide  # Da eseguire anche sul worker
 $ kubectl get pods -n calico-system -o wide
 $ ip route show
 $ kubectl get pods -A | grep -E "calico|flannel"
-
+```
 
 
 
