@@ -101,4 +101,26 @@ Ora puoi aggiungere i nodi di lavoro (worker nodes) al cluster.
 
     - Crea un file `~/.kube/config` sul nodo worker.
     - Copia il contenuto del file `k3s.yaml` dal server (control plane) in questo file.
-    - Modifica il campo `serve
+    - Modifica il campo `server` per includere l'IP del server.
+
+5. **Configura `kubectl`**:
+
+    Esegui i seguenti comandi sul nodo worker per impostare il tuo ambiente Kubernetes:
+
+    ```bash
+    $ export KUBECONFIG=~/.kube/config
+    $ kubectl get nodes
+    ```
+
+    Esempio di output:
+
+    ```
+    NAME            STATUS  ROLES                   AGE VERSION
+    ubuntuserver    Ready   control.plane,master    xx  xx
+    ubuntuworker    Ready   <none>                  xx  xx
+    ```
+
+---
+
+Con questi passaggi avrai un cluster K3s funzionante con un server e uno o più nodi worker.
+
