@@ -235,12 +235,21 @@ kubectl port-forward -n cattle-system svc/rancher 8443:443
 
 # Check the rollout status of the Rancher deployment
 kubectl -n cattle-system rollout status deploy/rancher
-# OUTPUT: deployment "rancher" successfully rolled out
+>> OUTPUT: deployment "rancher" successfully rolled out
 
 # Get the deployment details
 kubectl -n cattle-system get deploy rancher
 NAME      DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
 rancher   3         3         3            3           3m
 ```
+
+
+
+
+
+
+
+
+
 
 
