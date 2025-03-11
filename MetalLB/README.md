@@ -6,6 +6,7 @@
 - [Installazione](https://metallb.universe.tf/installation/)  
 - [Configurazione](https://metallb.universe.tf/configuration/#layer-2-configuration)
 - [l2advertisemnt.yaml](https://github.com/metallb/metallb/blob/main/config/crd/bases/metallb.io_l2advertisements.yaml)
+- [MetalLB-Confing](MetalLB/metallb-config.yaml)
 
 MetalLB è un Load Balancer per Kubernetes su cluster bare metal.  
 In pratica, permette di assegnare un IP esterno ai servizi di tipo LoadBalancer, cosa che normalmente accade automaticamente sui cloud provider (come AWS, GCP, Azure) ma non in un cluster Kubernetes on-premise o su macchine fisiche.  
