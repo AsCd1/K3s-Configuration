@@ -246,6 +246,7 @@ rancher   3         3         3            3           3m
 ## MetalLB
 - [Documentazione qui](MetalLB/README.md)
 
+### Installazione con Helm
 ```bash
 # Aggiungi il repository Helm di MetalLB
 helm repo add metallb https://metallb.github.io/metallb
@@ -254,9 +255,27 @@ helm repo add metallb https://metallb.github.io/metallb
 helm install metallb metallb/metallb
 ```
 
+### Configurazione Layer2
+```bash
+# Creazione del file di configurazione per Layer 2
+nano metallb-configuration.yaml
+```
+Durante l'applicazione della configurazione si è verificato un errore risolto con un secondo apply:
+```bash
+# Creazione del file L2Advertisement separato
+nano l2advertisement.yaml
 
+kubectl apply -f l2advertisement.yaml
+kubectl apply -f metallb-config.yaml
+```
+Verifica della configurazione:
+```bash
+kubectl get ipaddresspools -n metallb-system
+>> Output: Lista dei range IP
 
-
+kubectl get l2advertisements -n metallb-system
+>> Output: Nome e range IP
+```
 
 
 
