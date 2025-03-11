@@ -158,5 +158,89 @@ $ ip route show
 $ kubectl get pods -A | grep -E "calico|flannel" #flannel è presente di default se non si segue l'installazione pulita
 ```
 
+## Installing Helm  
+[The Helm project](https://helm.sh/docs/intro/install/) provides two ways to fetch and install Helm. These are the official methods to get Helm releases. In addition to that, the Helm community provides methods to install Helm through different package managers. Installation through those methods can be found below the official methods.  
+
+### From Script  
+Helm now has an installer script that will automatically grab the latest version of Helm and install it locally.  
+
+You can fetch that script, and then execute it locally. It's well documented so that you can read through it and understand what it is doing before you run it.  
+
+```bash
+curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+chmod 700 get_helm.sh
+./get_helm.sh
+```
+
+you can also run if you want to live on the edge:
+```bash
+curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
+```
+## Install Cert-Manager  
+
+- **Link installazione Rancher**: VEDI SEZIONE SUCCESSIVA  
+- This step is only required to use certificates issued by Rancher's generated CA (`ingress.tls.source=rancher`) or to request Let's Encrypt issued certificates (`ingress.tls.source=letsEncrypt`).  
+
+```bash
+# Set the KUBECONFIG environment variable
+export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
+
+# Apply the Cert-Manager Custom Resource Definitions (CRDs)
+kubectl apply -f https://github.com/cert-manager/cert-manager/releases/latest/download/cert-manager.crds.yaml
+
+# Add the Jetstack Helm repository
+helm repo add jetstack https://charts.jetstack.io
+
+# Update your local Helm chart repository cache
+helm repo update
+
+# Install Cert-Manager using Helm
+helm install cert-manager jetstack/cert-manager --namespace cert-manager --create-namespace
+
+# Verify Cert-Manager pods are running
+kubectl get pods --namespace cert-manager
+>> OUTPUT: 3 PODS IN RUNNING STATE
+
+# Check installed Custom Resource Definitions (CRDs)
+kubectl get crds | grep cert-manager
+>> OUTPUT: 6 cert-manager CRDs found
+```
+## Installing Rancher via Helm --Opzionale
+
+- [Link qui](https://ranchermanager.docs.rancher.com/getting-started/installation-and-upgrade/install-upgrade-on-a-kubernetes-cluster#3-choose-your-ssl-configuration) Site  
+- [Link qui](https://artifacthub.io/packages/helm/rancher-stable/rancher) Artifact Hub  
+- Aggiungi il repository Helm di Rancher:  
+
+```bash
+# Add the Rancher Helm repository
+helm repo add rancher-latest https://releases.rancher.com/server-charts/latest
+
+# Update Helm repositories
+helm repo update
+
+# Create the Rancher namespace
+kubectl create namespace cattle-system
+
+# Install Rancher using Helm
+helm install rancher rancher-latest/rancher \
+    --namespace cattle-system \
+    --create-namespace \
+    --set hostname="hostname" \
+    --set bootstrapPassword="YourPassword"
+```
+Usare il seguente comando:
+```bash
+kubectl port-forward -n cattle-system svc/rancher 8443:443
+>> FORWARD TRAMITE x.x.x.x:443 -> 444
+
+# Check the rollout status of the Rancher deployment
+kubectl -n cattle-system rollout status deploy/rancher
+# OUTPUT: deployment "rancher" successfully rolled out
+
+# Get the deployment details
+kubectl -n cattle-system get deploy rancher
+NAME      DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
+rancher   3         3         3            3           3m
+```
 
 
