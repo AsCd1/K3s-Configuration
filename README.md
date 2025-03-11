@@ -244,7 +244,15 @@ rancher   3         3         3            3           3m
 ```
 
 ## MetalLB
-- [Documentazione qui]()
+- [Documentazione qui](MetalLB/README.md)
+
+```bash
+# Aggiungi il repository Helm di MetalLB
+helm repo add metallb https://metallb.github.io/metallb
+
+# Installa MetalLB
+helm install metallb metallb/metallb
+```
 
 
 
