@@ -337,7 +337,7 @@ curl 192.x.x.x
 ```
 
 ### 3. Ottenere il nome del Pod
--[Deployment nginx-monitoring]()
+-[Deployment nginx-monitoring](nginx-prova/nginx-monitoring.yaml)
 
 Restituzione di Hello World! con il nome del pod che lo ha eseguito:
 ```bash
