@@ -280,7 +280,7 @@ kubectl get l2advertisements -n metallb-system
 >> Output: Nome e range IP
 ```
 ## Esempi
-### Prova per verificare il funzionamento
+### 1. Prova per verificare il funzionamento
 - [Deployment nginx-hello-deployment.yaml](nginx-prova/nginx-hello-deployment.yaml)
 - [Git originale del deployment](https://gist.githubusercontent.com/sdenel/1bd2c8b5975393ababbcff9b57784e82/raw/f1b885349ba17cb2a81ca3899acc86c6ad150eb1/nginx-hello-world-deployment.yaml)
 
@@ -323,5 +323,17 @@ Output atteso:
 ```
 >> Hello World!
 ```
+
+### 2. Hello World 3 Replicas
+- [Deployment nginx-hello-deployment-3Rep.yaml](nginx-prova/nginx-hello-deployment-3Rep.yaml)
+
+Applica il Deployment per aumentare le repliche a 3:
+```bash
+$kubectl apply -f nginx-hello-world-deployment.yaml
+kubectl get pods -l app=nginx
+>> OUTPUT: 3 pod
+```
+
+
 
 
