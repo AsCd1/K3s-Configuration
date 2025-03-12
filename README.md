@@ -259,7 +259,7 @@ helm install metallb metallb/metallb
 Creazione del file di configurazione per Layer 2:
 - [metallb-configuration.yaml](./MetalLB/metallb-config.yaml)
 ```bash
-echo "Apri il file di configurazione: https://github.com/AsCd1/K3s-Configuration/blob/main/metallb-configuration.yaml"
+echo "Apri il file di configurazione: https://github.com/AsCd1/K3s-Configuration/blob/main/MetalLB/metallb-configuration.yaml"
 nano metallb-configuration.yaml
 ```
 Durante l'applicazione della configurazione si è verificato un errore risolto con un secondo apply:
