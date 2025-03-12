@@ -177,8 +177,7 @@ you can also run if you want to live on the edge:
 curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
 ```
 ## Install Cert-Manager  
-
-- **Link installazione Rancher**: VEDI SEZIONE SUCCESSIVA  
+ 
 - This step is only required to use certificates issued by Rancher's generated CA (`ingress.tls.source=rancher`) or to request Let's Encrypt issued certificates (`ingress.tls.source=letsEncrypt`).  
 
 ```bash
