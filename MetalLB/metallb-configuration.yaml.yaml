@@ -18,6 +18,6 @@ spec:
   - first-pool
   nodeSelectors:
   - matchLabels:
-      kubernetes.io/hostname: ubuntu  # (master e worker)
+      kubernetes.io/hostname: ubuntumaster  # (master e worker)
   - matchLabels:
       kubernetes.io/hostname: ubuntuworker
