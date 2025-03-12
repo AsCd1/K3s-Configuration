@@ -329,13 +329,24 @@ Output atteso:
 
 Applica il Deployment per aumentare le repliche a 3:
 ```bash
-kubectl apply -f nginx-hello-world-deployment.yaml
+kubectl apply -f nginx-hello-world-deployment-3Rep.yaml
 kubectl get pods -l app=nginx
 >> OUTPUT: 3 pod
 curl 192.x.x.x
 >> Hello World!
 ```
 
+### 3. Ottenere il nome del Pod
+-[Deployment nginx-monitoring]()
+
+Restituzione di Hello World! con il nome del pod che lo ha eseguito:
+```bash
+nano ngnix-monitoring.yaml
+kubectl apply -f ngnix-monitoring.yaml
+curl 192.x.x.x
+>> Hello world from pod: nginx-<Podid>
+kubectl get pods -o wide
+```
 
 
 
