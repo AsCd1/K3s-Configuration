@@ -263,10 +263,12 @@ echo "Apri il file di configurazione: https://github.com/AsCd1/K3s-Configuration
 nano metallb-configuration.yaml
 ```
 Durante l'applicazione della configurazione si è verificato un errore risolto con un secondo apply:
+- Creazione del file [L2Advertisement](./MetalLB/l2advertisement.yaml) separato.
 ```bash
-# Creazione del file L2Advertisement separato
 nano l2advertisement.yaml
-
+```
+Apply della configurazione:
+```bash
 kubectl apply -f l2advertisement.yaml
 kubectl apply -f metallb-config.yaml
 ```
