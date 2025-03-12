@@ -18,7 +18,7 @@ Questa guida ti aiuterà a configurare un cluster K3s utilizzando una macchina c
 2. **Esegui il seguente comando** per installare K3s sul server:
 
     ```bash
-    $ curl -sfL https://get.k3s.io | INSTALL_K3S_EXEC="server --disable traefik --disable servicelb" sh -
+    curl -sfL https://get.k3s.io | INSTALL_K3S_EXEC="server --disable traefik --disable servicelb" sh -
     ```
 
     Questo comando installerà K3s sul server host e disabiliterà Traefik e il bilanciamento del servizio (service load balancer).
@@ -30,13 +30,13 @@ Dopo aver installato K3s sul server, recupera il **token del nodo** che sarà ut
 1. **Esegui il seguente comando** sul server per ottenere il token:
 
     ```bash
-    $ cat /var/lib/rancher/k3s/server/node-token
+    cat /var/lib/rancher/k3s/server/node-token
     ```
 
     oppure:
 
     ```bash
-    $ sudo cat /var/lib/rancher/k3s/server/node-token
+    sudo cat /var/lib/rancher/k3s/server/node-token
     ```
 
 2. Il **token** che otterrai servirà per il comando successivo = `YourToken`.
@@ -48,13 +48,13 @@ Per poter comunicare con il cluster, è necessario recuperare il certificato di 
 1. **Esegui il seguente comando** per ottenere il file di configurazione:
 
     ```bash
-    $ cat /etc/rancher/k3s/k3s.yaml
+    cat /etc/rancher/k3s/k3s.yaml
     ```
 
     oppure:
 
     ```bash
-    $ sudo cat /etc/rancher/k3s/k3s.yaml
+    sudo cat /etc/rancher/k3s/k3s.yaml
     ```
 
 2. **Salva il contenuto del file `k3s.yaml`** sul tuo computer nella directory `~/.kube/` come un file di configurazione personalizzato (`<nome del tuo file>.yaml`).
@@ -77,7 +77,7 @@ Ora puoi aggiungere i nodi di lavoro (worker nodes) al cluster.
 2. **Esegui il seguente comando** sul nodo worker:
 
     ```bash
-    $ curl -sfL https://get.k3s.io | K3S_URL=https://<Contol Plane IP>:6443 K3S_TOKEN=<YourToken> sh -
+    curl -sfL https://get.k3s.io | K3S_URL=https://<Contol Plane IP>:6443 K3S_TOKEN=<YourToken> sh -
     ```
 
     Sostituisci `<Contol Plane IP>` con l'IP del server (control plane) e `<YourToken>` con il token che hai ottenuto in precedenza.
@@ -87,7 +87,7 @@ Ora puoi aggiungere i nodi di lavoro (worker nodes) al cluster.
     Dopo aver eseguito il comando sul nodo worker, torna al server e esegui il comando:
 
     ```bash
-    $ kubectl get nodes
+    kubectl get nodes
     ```
 
     Esempio di output:
@@ -109,8 +109,8 @@ Ora puoi aggiungere i nodi di lavoro (worker nodes) al cluster.
     Esegui i seguenti comandi sul nodo worker per impostare il tuo ambiente Kubernetes:
 
     ```bash
-    $ export KUBECONFIG=~/.kube/config
-    $ kubectl get nodes
+    export KUBECONFIG=~/.kube/config
+    kubectl get nodes
     ```
 
     Esempio di output:
@@ -150,12 +150,12 @@ Calico può essere installato tramite due approcci principali:
 #### Comandi per installare l'operatore Calico:
 
 ```bash
-$ kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.29.2/manifests/tigera-operator.yaml
-$ kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.29.2/manifests/custom-resources.yaml
-$ kubectl get nodes -o wide  # Da eseguire anche sul worker --opzionale
-$ kubectl get pods -n calico-system -o wide
-$ ip route show
-$ kubectl get pods -A | grep -E "calico|flannel" #flannel è presente di default se non si segue l'installazione pulita
+kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.29.2/manifests/tigera-operator.yaml
+kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.29.2/manifests/custom-resources.yaml
+kubectl get nodes -o wide  # Da eseguire anche sul worker --opzionale
+kubectl get pods -n calico-system -o wide
+ip route show
+kubectl get pods -A | grep -E "calico|flannel" #flannel è presente di default se non si segue l'installazione pulita
 ```
 
 ## Installing Helm  
