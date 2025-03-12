@@ -258,7 +258,7 @@ helm install metallb metallb/metallb
 ### Configurazione Layer2
 ```bash
 # Creazione del file di configurazione per Layer 2
-nano metallb-configuration.yaml
+nano [metallb-configuration.yaml](./MetalLB/metallb-config.yaml)
 ```
 Durante l'applicazione della configurazione si è verificato un errore risolto con un secondo apply:
 ```bash
