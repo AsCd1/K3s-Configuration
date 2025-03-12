@@ -1,4 +1,4 @@
-# K3s-Configuration
+# K3s Configuration Guide
 # K3s Cluster Setup Guide
 
 ## Guida al Setup di un Cluster K3s
