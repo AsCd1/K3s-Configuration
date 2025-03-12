@@ -279,37 +279,44 @@ kubectl get ipaddresspools -n metallb-system
 kubectl get l2advertisements -n metallb-system
 >> Output: Nome e range IP
 ```
-
+## Esempi
 ### Prova per verificare il funzionamento
-
+Creazione della directory di prova:
 ```bash
-# Creazione della directory di prova
 mkdir nginx-prova
 cd nginx-prova
-
-# Creazione del file di configurazione
-nano nginx.yaml
-
-# Applicazione della configurazione
-kubectl apply -f . 
-
-# Controllo dei servizi
-kubectl get svc -A
-
-# Output atteso:
-# default nginx   LoadBalancer    InternalIP  ExternalIP <- deve essere quello del yaml
-
-# Testare l'accesso al servizio
-curl 192.x.x.x
-# Output atteso:
-# Hello World!
-
-# In caso di problemi, provare:
-wget -qO- 192.x.x.x
-# Output atteso:
-# Hello World!
-
 ```
-
+Creazione del file di configurazione:
+```bash
+nano nginx.yaml
+```
+Applicazione della configurazione:
+```bash
+kubectl apply -f . 
+```
+Controllo dei servizi:
+```bash
+kubectl get svc -A
+```
+Output atteso:
+```
+>>> default nginx   LoadBalancer    InternalIP  ExternalIP <- deve essere quello del yaml
+```
+Testare l'accesso al servizio:
+```bash
+curl 192.x.x.x
+```
+Output atteso:
+```
+>>> Hello World!
+```
+In caso di problemi, provare:
+```bash
+wget -qO- 192.x.x.x
+```
+Output atteso:
+```
+>> Hello World!
+```
 
 
