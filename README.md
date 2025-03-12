@@ -329,7 +329,7 @@ Output atteso:
 
 Applica il Deployment per aumentare le repliche a 3:
 ```bash
-$kubectl apply -f nginx-hello-world-deployment.yaml
+kubectl apply -f nginx-hello-world-deployment.yaml
 kubectl get pods -l app=nginx
 >> OUTPUT: 3 pod
 curl 192.x.x.x
