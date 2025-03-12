@@ -8,7 +8,7 @@ kind: Service
 metadata:
   name: nginx
   annotations:
-    metallb.universe.tf/loadBalancerIPs: 192.168.1.240
+    metallb.universe.tf/loadBalancerIPs: x.x.x.x # IP da selezionare dal pool di MetalLB
 spec:
   ports:
   - port: 80
