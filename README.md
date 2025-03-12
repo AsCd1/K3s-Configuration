@@ -256,7 +256,7 @@ helm install metallb metallb/metallb
 
 ### Configurazione Layer2
 Creazione del file di configurazione per Layer 2:
-- [metallb-configuration.yaml](./MetalLB/metallb-config.yaml)
+- [metallb-configuration](./MetalLB/metallb-config.yaml)
 ```bash
 echo "Apri il file di configurazione: https://github.com/AsCd1/K3s-Configuration/blob/main/MetalLB/metallb-configuration.yaml"
 nano metallb-configuration.yaml
@@ -281,7 +281,7 @@ kubectl get l2advertisements -n metallb-system
 ```
 ## Esempi
 ### 1. Prova per verificare il funzionamento
-- [Deployment nginx-hello-deployment.yaml](nginx-prova/nginx-hello-deployment.yaml)
+- [Deployment nginx-hello-deployment](nginx-prova/nginx-hello-deployment.yaml)
 - [Git originale del deployment](https://gist.githubusercontent.com/sdenel/1bd2c8b5975393ababbcff9b57784e82/raw/f1b885349ba17cb2a81ca3899acc86c6ad150eb1/nginx-hello-world-deployment.yaml)
 
 Creazione della directory di prova:
@@ -325,7 +325,7 @@ Output atteso:
 ```
 
 ### 2. Hello World 3 Replicas
-- [Deployment nginx-hello-deployment-3Rep.yaml](nginx-prova/nginx-hello-deployment-3Rep.yaml)
+- [Deployment nginx-hello-deployment-3Rep](nginx-prova/nginx-hello-deployment-3Rep.yaml)
 
 Applica il Deployment per aumentare le repliche a 3:
 ```bash
