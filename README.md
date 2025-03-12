@@ -282,6 +282,7 @@ kubectl get l2advertisements -n metallb-system
 ## Esempi
 ### Prova per verificare il funzionamento
 - [Deployment nginx-hello-deployment.yaml](nginx-prova/nginx-hello-deployment.yaml)
+- [Git originale del deployment](https://gist.githubusercontent.com/sdenel/1bd2c8b5975393ababbcff9b57784e82/raw/f1b885349ba17cb2a81ca3899acc86c6ad150eb1/nginx-hello-world-deployment.yaml)
 
 Creazione della directory di prova:
 ```bash
