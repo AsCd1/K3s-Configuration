@@ -281,6 +281,8 @@ kubectl get l2advertisements -n metallb-system
 ```
 ## Esempi
 ### Prova per verificare il funzionamento
+- [Deployment nginx-hello-deployment.yaml](nginx-prova/nginx-hello-deployment.yaml)
+
 Creazione della directory di prova:
 ```bash
 mkdir nginx-prova
@@ -288,11 +290,13 @@ cd nginx-prova
 ```
 Creazione del file di configurazione:
 ```bash
-nano nginx.yaml
+nano nginx-hello-deployment.yaml
 ```
 Applicazione della configurazione:
 ```bash
-kubectl apply -f . 
+kubectl apply -f .
+    oppure
+kubectl apply -f nginx-hello-deployment.yaml
 ```
 Controllo dei servizi:
 ```bash
