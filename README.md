@@ -325,7 +325,7 @@ Output atteso:
 ```
 
 ### 2. Hello World 3 Replicas
-- [Deployment nginx-hello-deployment-3Rep](Esempi/nginx-prova/nginx-hello-deployment-3Rep.yaml)
+- [Deployment nginx-hello-deployment-3Rep](Esempi/ngnix-prova/nginx-hello-deployment-3Rep.yaml)
 
 Applica il Deployment per aumentare le repliche a 3:
 ```bash
