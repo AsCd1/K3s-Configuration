@@ -5,7 +5,7 @@ kind: Service
 metadata:
   name: nginx
   annotations:
-    metallb.universe.tf/loadbalancerIPs: x.x.x.x
+    metallb.universe.tf/loadbalancerIPs: x.x.x.x # IP da selezionare dal pool di MetalLB
 spec:
   ports:
   - port: 80
