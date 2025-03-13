@@ -3,7 +3,23 @@
 In un cluster bare-metal, **MetalLB** e la **Gateway API** lavorano insieme per esporre e instradare il traffico esterno in modo flessibile.  
 
 ## 📖 Indice
-- [🔹 MetalLB: Il Load Balancer per Bare-Metal](#metallb:-il-load-balancer-per-baremetal)
+- [🔹 MetalLB: Il Load Balancer per Bare-Metal](#-metallb-il-load-balancer-per-bare-metal)
+- [🔹 Gateway API](#gateway-api)
+- [🔹 Come Lavorano Insieme]
+- [🔹 Scenario Complessivo]
+- [📌 In Sintesi]
+- [🔹 Ingress vs Gateway API]
+- [🔹 Istio Install with Helm]
+  - [📌 Aggiunta del repository Helm di Istio]
+  - [📌 Aggiornamento dei repository]
+  - [📌 Installazione della base di Istio]
+  - [📌 Verifica dello stato di istio-base]
+  - [📌 Installazione del servizio istiod]
+  - [📌 Verifica dell'installazione]
+  - [📌 Controllo dello stato dei pod di istiod]
+  - [📌 Creazione dello spazio dei nomi per il gateway]
+  - [📌 Installazione del gateway di Istio]
+  - [📌 Verifica dei servizi]
 - [🎯 Cosa abbiamo ottenuto](#-cosa-abbiamo-ottenuto)
   - [📌 Verifica dei pod di Istio Ingress](#-verifica-dei-pod-di-istio-ingress)
   - [📌 Verifica del Service di Istio Ingress](#-verifica-del-service-di-istio-ingress)
@@ -47,7 +63,7 @@ In un cluster bare-metal, **MetalLB** e la **Gateway API** lavorano insieme per 
 
 ---
 
-## Ingress vs Gateway API  
+## 🔹 Ingress vs Gateway API  
 
 | **Caratteristica**  | **Ingress**  | **Gateway API**  |
 |--------------------|-------------|----------------|
@@ -57,7 +73,7 @@ In un cluster bare-metal, **MetalLB** e la **Gateway API** lavorano insieme per 
 | **Uso con MetalLB**  | Non direttamente compatibile. | Il controller viene esposto come `LoadBalancer` e usa un IP esterno assegnato da MetalLB. |
 
 
-## Istio Install with Helm  
+## 🔹 Istio Install with Helm  
 
 🔗 **Guida ufficiale**: [Istio Helm Installation](https://istio.io/latest/docs/setup/install/helm/)  
 
