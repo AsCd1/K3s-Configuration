@@ -1,3 +1,4 @@
+# link originale: https://github.com/istio/istio/blob/master/samples/helloworld/helloworld-gateway.yaml
 apiVersion: networking.istio.io/v1
 kind: Gateway
 metadata:
