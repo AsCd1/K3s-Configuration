@@ -5,7 +5,7 @@ In un cluster bare-metal, **MetalLB** e la **Gateway API** lavorano insieme per 
 ## ⚙️ Pre-requisiti  
 
 - 🛠 **Una configurazione di Kubernetes:** [Vedi configurazione]()  
-- 🌐 **Un LoadBalancer:** [Vedi configurazione MetalLB](./K3s-Configuration/MetalLB) 
+- 🌐 **Un LoadBalancer:** [Vedi configurazione MetalLB](./MetalLB/README.md) 
 
 ## 📖 Indice
 
