@@ -179,7 +179,7 @@ istio-ingress   LoadBalancer   x.x.x.x         x.x.x.x         15021:30268/TCP,8
 
 ## 🚀 Hello World! in Istio
 
-- [🔗 Gateway VirtualService YAML](https://github.com/istio/istio/blob/master/samples/helloworld/helloworld-gateway.yaml) --**Modificare il controller col tuo**
+- [🔗 Gateway VirtualService YAML](https://github.com/istio/istio/blob/master/samples/helloworld/helloworld-gateway.yaml) **--Modificare il controller col tuo**
 - [🔗 HelloPod YAML](https://github.com/istio/istio/blob/master/samples/helloworld/helloworld.yaml)
 - [🔗 Cartella esempi](../Esempi/Istio-Esempi)  
 
