@@ -7,7 +7,7 @@ In un cluster bare-metal, **MetalLB** e la **Gateway API** lavorano insieme per 
 - [🔹 Gateway API](#-gateway-api)
 - [🔹 Come Lavorano Insieme](#-come-lavorano-insieme)
 - [🔹 Scenario Complessivo](#-scenario-complessivo)
-- [📌 In Sintesi](#-in-sintesi)
+- [🔹 In Sintesi](#-in-sintesi)
 - [🔹 Ingress vs Gateway API](#-ingress-vs-gateway-api)
 - [🔹 Istio Install with Helm](#-istio-installazione-con-helm)
   - [📌 Aggiunta del repository Helm di Istio](#-aggiunta-del-repository-helm-di-istio)
@@ -56,7 +56,7 @@ In un cluster bare-metal, **MetalLB** e la **Gateway API** lavorano insieme per 
 | **MetalLB**  | Fornisce l'IP esterno e gestisce il traffico in ingresso. |
 | **Controller Gateway API**  | Gestisce il routing e l'instradamento del traffico interno con regole definite (`HTTPRoute`, ecc.). |
 
-## 📌 In Sintesi  
+## 🔹 In Sintesi  
 ✅ **MetalLB**: Assegna un **IP esterno** e agisce come **load balancer**.  
 ✅ **Gateway API**: Fornisce un **modello di routing avanzato** e modulare.  
 ✅ **Collaborazione**: MetalLB gestisce l’**esposizione**, mentre la **Gateway API** gestisce l’**instradamento**.  
