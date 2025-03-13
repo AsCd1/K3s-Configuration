@@ -23,6 +23,12 @@ In un cluster bare-metal, **MetalLB** e la **Gateway API** lavorano insieme per 
 - [🎯 Cosa abbiamo ottenuto](#-cosa-abbiamo-ottenuto)
   - [📌 Verifica dei pod di Istio Ingress](#-verifica-dei-pod-di-istio-ingress)
   - [📌 Verifica del Service di Istio Ingress](#-verifica-del-service-di-istio-ingress)
+- [🚀 Hello World! in Istio](#-hello-world-in-istio)
+  - [📌 Creazione dei file di configurazione](#-creazione-del-file-di-configurazione)
+  - [📌 Verifica del controller Istio Ingress](#-verifica-del-controller-istio-ingress)
+  - [📌 Applicazione delle configurazioni](#-applicazione-delle-configurazioni)
+  - [📌 Controllo delle risorse](#-controllo-delle-risorse)
+  - [📌 Test dell'accesso al servizio](#-)
 
 ## 🔹 MetalLB: Il Load Balancer per Bare-Metal  
 - **Funzione Principale**:  
