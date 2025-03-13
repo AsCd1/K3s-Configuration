@@ -1,15 +1,15 @@
-## MetalLB & Gateway API  
+# MetalLB & Gateway API  
 
 In un cluster bare-metal, **MetalLB** e la **Gateway API** lavorano insieme per esporre e instradare il traffico esterno in modo flessibile.  
 
-### 🔹 MetalLB: Il Load Balancer per Bare-Metal  
+## 🔹 MetalLB: Il Load Balancer per Bare-Metal  
 - **Funzione Principale**:  
   - MetalLB fornisce la funzionalità tipica di un **load balancer esterno**, assegnando **indirizzi IP pubblici** ai servizi di tipo `LoadBalancer` in cluster senza un provider cloud.  
 - **Come Funziona**:  
   - Quando crei un **Service Kubernetes** di tipo `LoadBalancer`, MetalLB assegna un **IP esterno** (dal pool configurato) a quel servizio.  
   - Questo IP diventa il **punto d’ingresso** per il traffico esterno.  
 
-### 🔹 Gateway API  
+## 🔹 Gateway API  
 - **Funzione Principale**:  
   - La **Gateway API** è una specifica più moderna e modulare per definire come il **traffico in ingresso** deve essere instradato all’interno del cluster.  
   - Suddivide la configurazione in più risorse (come **Gateway, HTTPRoute, TCPRoute**) rispetto all’oggetto `Ingress` tradizionale.  
@@ -17,7 +17,7 @@ In un cluster bare-metal, **MetalLB** e la **Gateway API** lavorano insieme per 
   - **Gateway**: Definisce il punto d’ingresso, il listener (porta, protocollo, ecc.) e la configurazione di base.  
   - **HTTPRoute / TCPRoute**: Specificano come il traffico in ingresso deve essere indirizzato ai vari servizi interni.  
 
-### 🔹 Come Lavorano Insieme  
+## 🔹 Come Lavorano Insieme  
 1. **Esposizione Esterna con MetalLB**:  
    - In un cluster bare-metal, per esporre un **Gateway API** all’esterno, il controller del Gateway (es. **Contour, Kong, Istio**) viene eseguito come un servizio di tipo `LoadBalancer`.  
    - MetalLB assegna un **IP esterno** a questo servizio.  
@@ -28,13 +28,13 @@ In un cluster bare-metal, **MetalLB** e la **Gateway API** lavorano insieme per 
    - Un **Gateway** ascolta sulla porta `80`.  
    - Grazie a un **HTTPRoute**, il traffico viene inoltrato a un **servizio Nginx** o un’applicazione `Hello World`.  
 
-### 🔹 Scenario Complessivo  
+## 🔹 Scenario Complessivo  
 | **Componente**  | **Funzione**  |
 |----------------|-------------|
 | **MetalLB**  | Fornisce l'IP esterno e gestisce il traffico in ingresso. |
 | **Controller Gateway API**  | Gestisce il routing e l'instradamento del traffico interno con regole definite (`HTTPRoute`, ecc.). |
 
-### 📌 In Sintesi  
+## 📌 In Sintesi  
 ✅ **MetalLB**: Assegna un **IP esterno** e agisce come **load balancer**.  
 ✅ **Gateway API**: Fornisce un **modello di routing avanzato** e modulare.  
 ✅ **Collaborazione**: MetalLB gestisce l’**esposizione**, mentre la **Gateway API** gestisce l’**instradamento**.  
@@ -51,7 +51,7 @@ In un cluster bare-metal, **MetalLB** e la **Gateway API** lavorano insieme per 
 | **Uso con MetalLB**  | Non direttamente compatibile. | Il controller viene esposto come `LoadBalancer` e usa un IP esterno assegnato da MetalLB. |
 
 
-### Istio Install with Helm  
+## Istio Install with Helm  
 
 🔗 **Guida ufficiale**: [Istio Helm Installation](https://istio.io/latest/docs/setup/install/helm/)  
 
@@ -122,5 +122,37 @@ helm install istio-ingress istio/gateway -n istio-ingress --wait
 kubectl get svc -A
 >> Output atteso: Istio ha creato il suo LoadBalancer.
 ```
+
+## 🎯 Cosa abbiamo ottenuto  
+
+### 📌 Verifica dei pod di Istio Ingress  
+```bash
+kubectl get pods -n istio-ingress
+>>OUTPUT atteso:
+NAME                             READY   STATUS
+istio-ingress-<PodID>   1/1     Running
+```
+
+### 📌 Verifica del Service di Istio Ingress
+```bash
+kubectl get svc -n istio-ingress
+>> OUTPUT atteso:
+NAME            TYPE           CLUSTER-IP      EXTERNAL-IP     PORT(S)
+istio-ingress   LoadBalancer   x.x.x.x         x.x.x.x         15021:30268/TCP,80:31240/TCP,443:32410/TCP
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
