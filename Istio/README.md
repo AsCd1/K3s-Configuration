@@ -194,7 +194,7 @@ nano podhello.yaml
 ### 📌 Verifica del controller Istio Ingress
 ```bash
 kubectl get pods -n istio-ingress --show-labels
->> Restituisce il nome del controller
+>> Restituisce il nome del controller da inserire all'interno di gateway-virtualservice.yaml
 ```
 
 ### 📌 Applicazione delle configurazioni
