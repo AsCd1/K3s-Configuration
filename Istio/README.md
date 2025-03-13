@@ -9,7 +9,7 @@ In un cluster bare-metal, **MetalLB** e la **Gateway API** lavorano insieme per 
 - [🔹 Scenario Complessivo](#-scenario-complessivo)
 - [🔹 In Sintesi](#-in-sintesi)
 - [🔹 Ingress vs Gateway API](#-ingress-vs-gateway-api)
-- [🔹 Istio Install with Helm](#-istio-installazione-con-helm)
+- [🔹 Istio Install with Helm](#-istio-install-with-helm)
   - [📌 Aggiunta del repository Helm di Istio](#-aggiunta-del-repository-helm-di-istio)
   - [📌 Aggiornamento dei repository](#-aggiornamento-dei-repository)
   - [📌 Installazione della base di Istio](#-installazione-della-base-di-istio)
