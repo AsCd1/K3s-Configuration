@@ -163,11 +163,42 @@ NAME            TYPE           CLUSTER-IP      EXTERNAL-IP     PORT(S)
 istio-ingress   LoadBalancer   x.x.x.x         x.x.x.x         15021:30268/TCP,80:31240/TCP,443:32410/TCP
 ```
 
+## 🚀 Hello World! in Istio
 
+- [🔗 Gateway VirtualService YAML](https://github.com/istio/istio/blob/master/samples/helloworld/helloworld-gateway.yaml) (Modificare il controller col tuo)  
+- [🔗 HelloPod YAML](https://github.com/istio/istio/blob/master/samples/helloworld/helloworld.yaml)  
 
+### 📌 Creazione dei file di configurazione  
+```bash
+mkdir istiohello
+cd istiohello
+nano gateway-virtualservice.yaml
+nano podhello.yaml
+```
 
+### 📌 Verifica del controller Istio Ingress
+```bash
+kubectl get pods -n istio-ingress --show-labels
+>> Restituisce il nome del controller
+```
 
+### 📌 Applicazione delle configurazioni
+```bash
+kubectl apply -f gateway-virtualservice.yaml
+kubectl apply -f podhello.yaml
+```
 
+### 📌 Controllo delle risorse
+```bash
+kubectl get pods
+kubectl get virtualservice
+kubectl get gateway
+```
+
+### 📌 Test dell'accesso al servizio
+```bash
+curl http://x.x.x.x/hello
+```
 
 
 
