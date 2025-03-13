@@ -4,7 +4,7 @@ In un cluster bare-metal, **MetalLB** e la **Gateway API** lavorano insieme per 
 
 ## 📖 Indice
 - [🔹 MetalLB: Il Load Balancer per Bare-Metal](#-metallb-il-load-balancer-per-bare-metal)
-- [🔹 Gateway API](#gateway-api)
+- [🔹 Gateway API](#-gateway-api)
 - [🔹 Come Lavorano Insieme]
 - [🔹 Scenario Complessivo]
 - [📌 In Sintesi]
