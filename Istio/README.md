@@ -2,6 +2,12 @@
 
 In un cluster bare-metal, **MetalLB** e la **Gateway API** lavorano insieme per esporre e instradare il traffico esterno in modo flessibile.  
 
+## 📖 Indice
+- [🔹 MetalLB: Il Load Balancer per Bare-Metal](#)
+- [🎯 Cosa abbiamo ottenuto](#-cosa-abbiamo-ottenuto)
+  - [📌 Verifica dei pod di Istio Ingress](#-verifica-dei-pod-di-istio-ingress)
+  - [📌 Verifica del Service di Istio Ingress](#-verifica-del-service-di-istio-ingress)
+
 ## 🔹 MetalLB: Il Load Balancer per Bare-Metal  
 - **Funzione Principale**:  
   - MetalLB fornisce la funzionalità tipica di un **load balancer esterno**, assegnando **indirizzi IP pubblici** ai servizi di tipo `LoadBalancer` in cluster senza un provider cloud.  
