@@ -1,4 +1,4 @@
-# MetalLB & Gateway API  
+# MetalLB & Istio
 
 In un cluster bare-metal, **MetalLB** e la **Gateway API** lavorano insieme per esporre e instradare il traffico esterno in modo flessibile.  
 
