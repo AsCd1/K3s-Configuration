@@ -1,8 +1,14 @@
 # MetalLB & Istio
 
-In un cluster bare-metal, **MetalLB** e la **Gateway API** lavorano insieme per esporre e instradare il traffico esterno in modo flessibile.  
+In un cluster bare-metal, **MetalLB** e la **Gateway API** lavorano insieme per esporre e instradare il traffico esterno in modo flessibile. 
+
+## ⚙️ Pre-requisiti  
+
+- 🛠 **Una configurazione di Kubernetes:** [Vedi configurazione]()  
+- 🌐 **Un LoadBalancer:** [Vedi configurazione MetalLB](./MetalLB) 
 
 ## 📖 Indice
+
 - [🔹 MetalLB: Il Load Balancer per Bare-Metal](#-metallb-il-load-balancer-per-bare-metal)
 - [🔹 Gateway API](#-gateway-api)
 - [🔹 Come Lavorano Insieme](#-come-lavorano-insieme)
@@ -30,14 +36,16 @@ In un cluster bare-metal, **MetalLB** e la **Gateway API** lavorano insieme per 
   - [📌 Controllo delle risorse](#-controllo-delle-risorse)
   - [📌 Test dell'accesso al servizio](#-test-dellaccesso-al-servizio)
 
-## 🔹 MetalLB: Il Load Balancer per Bare-Metal  
+## 🔹 MetalLB: Il Load Balancer per Bare-Metal 
+
 - **Funzione Principale**:  
   - MetalLB fornisce la funzionalità tipica di un **load balancer esterno**, assegnando **indirizzi IP pubblici** ai servizi di tipo `LoadBalancer` in cluster senza un provider cloud.  
 - **Come Funziona**:  
   - Quando crei un **Service Kubernetes** di tipo `LoadBalancer`, MetalLB assegna un **IP esterno** (dal pool configurato) a quel servizio.  
   - Questo IP diventa il **punto d’ingresso** per il traffico esterno.  
 
-## 🔹 Gateway API  
+## 🔹 Gateway API
+
 - **Funzione Principale**:  
   - La **Gateway API** è una specifica più moderna e modulare per definire come il **traffico in ingresso** deve essere instradato all’interno del cluster.  
   - Suddivide la configurazione in più risorse (come **Gateway, HTTPRoute, TCPRoute**) rispetto all’oggetto `Ingress` tradizionale.  
