@@ -5,21 +5,21 @@ In un cluster bare-metal, **MetalLB** e la **Gateway API** lavorano insieme per 
 ## 📖 Indice
 - [🔹 MetalLB: Il Load Balancer per Bare-Metal](#-metallb-il-load-balancer-per-bare-metal)
 - [🔹 Gateway API](#-gateway-api)
-- [🔹 Come Lavorano Insieme]
-- [🔹 Scenario Complessivo]
-- [📌 In Sintesi]
-- [🔹 Ingress vs Gateway API]
-- [🔹 Istio Install with Helm]
-  - [📌 Aggiunta del repository Helm di Istio]
-  - [📌 Aggiornamento dei repository]
-  - [📌 Installazione della base di Istio]
-  - [📌 Verifica dello stato di istio-base]
-  - [📌 Installazione del servizio istiod]
-  - [📌 Verifica dell'installazione]
-  - [📌 Controllo dello stato dei pod di istiod]
-  - [📌 Creazione dello spazio dei nomi per il gateway]
-  - [📌 Installazione del gateway di Istio]
-  - [📌 Verifica dei servizi]
+- [🔹 Come Lavorano Insieme](#-come-lavorano-insieme)
+- [🔹 Scenario Complessivo](#-scenario-complessivo)
+- [📌 In Sintesi](#-in-sintesi)
+- [🔹 Ingress vs Gateway API](#-ingress-vs-gateway-api)
+- [🔹 Istio Install with Helm](#-istio-installazione-con-helm)
+  - [📌 Aggiunta del repository Helm di Istio](#-aggiunta-del-repository-helm-di-istio)
+  - [📌 Aggiornamento dei repository](#-aggiornamento-dei-repository)
+  - [📌 Installazione della base di Istio](#-installazione-della-base-di-istio)
+  - [📌 Verifica dello stato di istio-base](#-verifica-dello-stato-di-istio-base)
+  - [📌 Installazione del servizio istiod](#-installazione-del-servizio-istiod)
+  - [📌 Verifica dell'installazione](#-verifica-dellinstallazione)
+  - [📌 Controllo dello stato dei pod di istiod](#-controllo-dello-stato-dei-pod-di-istiod)
+  - [📌 Creazione dello spazio dei nomi per il gateway](#-creazione-dello-spazio-dei-nomi-per-il-gateway)
+  - [📌 Installazione del gateway di Istio](#installazione-del-gateway-di-istio)
+  - [📌 Verifica dei servizi](#verifica-dei-servizi)
 - [🎯 Cosa abbiamo ottenuto](#-cosa-abbiamo-ottenuto)
   - [📌 Verifica dei pod di Istio Ingress](#-verifica-dei-pod-di-istio-ingress)
   - [📌 Verifica del Service di Istio Ingress](#-verifica-del-service-di-istio-ingress)
