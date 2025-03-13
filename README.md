@@ -337,7 +337,7 @@ curl 192.x.x.x
 ```
 
 ### 3. Ottenere il nome del Pod
--[Deployment nginx-monitoring](Esempi/ngnix-prova/nginx-monitoring.yaml)
+- [Deployment nginx-monitoring](Esempi/ngnix-prova/nginx-monitoring.yaml)
 
 Restituzione di Hello World! con il nome del pod che lo ha eseguito:
 ```bash
@@ -347,6 +347,37 @@ curl 192.x.x.x
 >> Hello world from pod: nginx-<Podid>
 kubectl get pods -o wide
 ```
+
+## Riepilogo della tua configurazione Kubernetes + MetalLB + Calico
+Hai creato un cluster K3s con:  
+- **Control Plane** su una VM  
+- **Worker Node** su un'altra VM  
+- **Calico** come CNI (Container Network Interface)  
+- **MetalLB** per assegnare IP pubblici ai servizi di tipo LoadBalancer  
+
+E infine, hai testato un **Deployment Nginx** con un **Servizio LoadBalancer** per verificare la corretta esposizione delle applicazioni.  
+
+---
+
+### 🏗️ Cluster Kubernetes (K3s)  
+1. **Control Plane**: gestisce il cluster (schedulazione, stato, API Server).  
+2. **Worker Node**: esegue i pod e gestisce il traffico.  
+3. **Container Network Interface (CNI) - Calico**: permette la comunicazione tra i pod.  
+
+---
+
+### 🌐 MetalLB - LoadBalancer per Bare Metal  
+- **MetalLB** gestisce gli IP pubblici su cluster Kubernetes senza cloud provider.  
+- **Modalità Layer 2**:  
+  - MetalLB annuncia l'IP assegnato a un servizio LoadBalancer tramite **ARP**.  
+  - I nodi del cluster rispondono direttamente alle richieste ricevute.  
+
+---
+
+### 🚀 Test con Nginx  
+- Hai creato un **Deployment Nginx** con più repliche.  
+- Il **Service** con `type: LoadBalancer` ha ricevuto un **IP pubblico** da MetalLB.  
+- Il traffico verso l’**IP pubblico** viene distribuito ai pod di Nginx.
 
 
 
