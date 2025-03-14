@@ -56,12 +56,12 @@ LoadBalancer Ingress:     x.x.x.x (VIP)
 Events:
   Type    Reason        Age   From                Message
   ----    ------        ----  ----                -------
-  Normal  IPAllocated   12s   metallb-controller  Assigned IP ["192.168.1.240"]
+  Normal  IPAllocated   12s   metallb-controller  Assigned IP ["x.x.x.x"]
   Normal  nodeAssigned  9s    metallb-speaker     announcing from node "ubuntuworker" with protocol "layer2"
 ```
 ### 📌 Test dell'accesso al servizio
 ```bash
-curl http://192.168.1.240:8080
+curl http://x.x.x.x:8080
 kubectl delete -f web-tcp-service.yaml,redis-leader-service.yaml,redis-replica-service.yaml,web-deployment.yaml,redis-leader-deployment.yaml,redis-replica-deployment.yaml
 ```
 
