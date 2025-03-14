@@ -3,11 +3,11 @@
 - This step is only required to use certificates issued by Rancher's generated CA (`ingress.tls.source=rancher`) or to request Let's Encrypt issued certificates (`ingress.tls.source=letsEncrypt`).  
 
 ## 📌 Passaggi per l'installazione:
-- Set the KUBECONFIG environment variable
+🔹 Set the KUBECONFIG environment variable
 ```bash
 export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
 ```
-- Apply the Cert-Manager Custom Resource Definitions (CRDs)
+🔹 Apply the Cert-Manager Custom Resource Definitions (CRDs)
 ```bash
 kubectl apply -f https://github.com/cert-manager/cert-manager/releases/latest/download/cert-manager.crds.yaml
 ```
