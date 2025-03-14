@@ -13,12 +13,12 @@
 Kompose è rilasciato tramite GitHub:
 
 ```bash
-$ curl -L https://github.com/kubernetes/kompose/releases/download/v1.35.0/kompose-linux-amd64 -o kompose
+curl -L https://github.com/kubernetes/kompose/releases/download/v1.35.0/kompose-linux-amd64 -o kompose
 
-$ chmod +x kompose
-$ sudo mv ./kompose /usr/local/bin/kompose
+chmod +x kompose
+sudo mv ./kompose /usr/local/bin/kompose
 
-$ kompose version
+kompose version
 >> 1.35.0
 ```
 ## 🔹 Esempio
@@ -26,20 +26,20 @@ $ kompose version
 ### 📌 Creazione Repository
 - [🔗docker-compose.yaml]
 ```bash
-$ mkdir kompose-example
-$ cd kompose-example
-$ nano docker-compose.yaml  # (vedi compose.yaml sopra)
-$ kompose convert
-INFO Kubernetes file "redis-leader-service.yaml" created
-INFO Kubernetes file "redis-replica-service.yaml" created
-INFO Kubernetes file "web-tcp-service.yaml" created
-INFO Kubernetes file "redis-leader-deployment.yaml" created
-INFO Kubernetes file "redis-replica-deployment.yaml" created
-INFO Kubernetes file "web-deployment.yaml" created
+mkdir kompose-example
+cd kompose-example
+nano docker-compose.yaml  # (vedi compose.yaml sopra)
+kompose convert
+>> INFO Kubernetes file "redis-leader-service.yaml" created
+>> INFO Kubernetes file "redis-replica-service.yaml" created
+>> INFO Kubernetes file "web-tcp-service.yaml" created
+>> INFO Kubernetes file "redis-leader-deployment.yaml" created
+>> INFO Kubernetes file "redis-replica-deployment.yaml" created
+>> INFO Kubernetes file "web-deployment.yaml" created
 ```
 ### 📌 Configurazione
 ```bash
-$ kubectl apply -f web-tcp-service.yaml,redis-leader-service.yaml,redis-replica-service.yaml,web-deployment.yaml,redis-leader-deployment.yaml,redis-replica-deployment.yaml
+kubectl apply -f web-tcp-service.yaml,redis-leader-service.yaml,redis-replica-service.yaml,web-deployment.yaml,redis-leader-deployment.yaml,redis-replica-deployment.yaml
 service/web-tcp created
 service/redis-leader created
 service/redis-replica created
@@ -49,7 +49,7 @@ deployment.apps/redis-replica created
 ```
 ### 📌 Verifica dei servizi
 ```bash
-$ kubectl describe svc web-tcp
+kubectl describe svc web-tcp
 ...
 Type:                     LoadBalancer
 LoadBalancer Ingress:     192.168.1.240 (VIP)
@@ -61,8 +61,8 @@ Events:
 ```
 ### 📌 Test dell'accesso al servizio
 ```bash
-$ curl http://192.168.1.240:8080
-$ kubectl delete -f web-tcp-service.yaml,redis-leader-service.yaml,redis-replica-service.yaml,web-deployment.yaml,redis-leader-deployment.yaml,redis-replica-deployment.yaml
+curl http://192.168.1.240:8080
+kubectl delete -f web-tcp-service.yaml,redis-leader-service.yaml,redis-replica-service.yaml,web-deployment.yaml,redis-leader-deployment.yaml,redis-replica-deployment.yaml
 ```
 
 
