@@ -22,7 +22,7 @@ kompose version
 >> 1.35.0
 ```
 ## 🔹 Esempio
-###📌 Link Utili
+### 📌 Link Utili
 - [🔗docker-compose.yaml](../Esempi/kompose/docker-compose.yaml)
 ### 📌 Creazione Repository
 ```bash
