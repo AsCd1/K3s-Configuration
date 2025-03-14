@@ -379,5 +379,131 @@ E infine, hai testato un **Deployment Nginx** con un **Servizio LoadBalancer** p
 - Il **Service** con `type: LoadBalancer` ha ricevuto un **IP pubblico** da MetalLB.  
 - Il traffico verso l’**IP pubblico** viene distribuito ai pod di Nginx.
 
+## 🔹 Istio Install with Helm  
 
+🔗 **Guida ufficiale**: [Istio Helm Installation](https://istio.io/latest/docs/setup/install/helm/)  
+
+#### 📌 Aggiunta del repository Helm di Istio  
+```bash
+helm repo add istio https://istio-release.storage.googleapis.com/charts
+>> Output atteso: "istio" has been added to your repositories
+```
+
+### 📌 Aggiornamento dei repository
+```bash
+helm repo update
+>> Output atteso: Update Complete. Happy Helming!
+```
+
+### 📌 Installazione della base di Istio
+```bash
+helm install istio-base istio/base -n istio-system --set defaultRevision=default --create-namespace
+>> Output atteso:
+- NAME: istio-base
+- LAST DEPLOYED: Tue Feb 25 09:19:24 2025
+- NAMESPACE: istio-system
+- STATUS: deployed
+- REVISION: 1
+- TEST SUITE: None
+- NOTES:
+- Istio base successfully installed!
+```
+
+### 📌 Verifica dello stato di istio-base
+```bash
+helm status istio-base -n istio-system
+helm get all istio-base -n istio-system
+helm ls -n istio-system
+```
+### 📌 Installazione del servizio istiod
+```bash
+helm install istiod istio/istiod -n istio-system --wait
+```
+
+### 📌 Verifica dell'installazione
+```bash
+helm ls -n istio-system
+helm status istiod -n istio-system
+```
+
+### 📌 Controllo dello stato dei pod di istiod
+```bash
+kubectl get deployments -n istio-system --output wide
+>> Output atteso:
+NAME     READY   UP-TO-DATE   AVAILABLE   AGE  CONTAINERS  SELECTOR
+istiod   1/1     1            1           23m  discovery   istio=pilot
+```
+
+### 📌 Creazione dello spazio dei nomi per il gateway
+```bash
+kubectl create namespace istio-ingress
+>> Output atteso: namespace/istio-ingress created
+```
+
+### 📌 Installazione del gateway di Istio
+```bash
+helm install istio-ingress istio/gateway -n istio-ingress --wait
+```
+
+### 📌 Verifica dei servizi
+```bash
+kubectl get svc -A
+>> Output atteso: Istio ha creato il suo LoadBalancer.
+```
+
+## 🎯 Cosa abbiamo ottenuto  
+
+### 📌 Verifica dei pod di Istio Ingress  
+```bash
+kubectl get pods -n istio-ingress
+>>OUTPUT atteso:
+NAME                             READY   STATUS
+istio-ingress-<PodID>   1/1     Running
+```
+
+### 📌 Verifica del Service di Istio Ingress
+```bash
+kubectl get svc -n istio-ingress
+>> OUTPUT atteso:
+NAME            TYPE           CLUSTER-IP      EXTERNAL-IP     PORT(S)
+istio-ingress   LoadBalancer   x.x.x.x         x.x.x.x         15021:30268/TCP,80:31240/TCP,443:32410/TCP
+```
+
+## 🚀 Hello World! in Istio
+
+- [🔗 Gateway VirtualService YAML](https://github.com/istio/istio/blob/master/samples/helloworld/helloworld-gateway.yaml) **--Modificare il controller col tuo**
+- [🔗 HelloPod YAML](https://github.com/istio/istio/blob/master/samples/helloworld/helloworld.yaml)
+- [🔗 Cartella esempi](../Esempi/Istio-Esempi)  
+
+### 📌 Creazione dei file di configurazione  
+```bash
+mkdir istiohello
+cd istiohello
+nano gateway-virtualservice.yaml
+nano podhello.yaml
+```
+
+### 📌 Verifica del controller Istio Ingress
+```bash
+kubectl get pods -n istio-ingress --show-labels
+>> Restituisce il nome del controller da inserire in gateway-virtualservice.yaml
+```
+
+### 📌 Applicazione delle configurazioni
+```bash
+kubectl apply -f gateway-virtualservice.yaml
+kubectl apply -f podhello.yaml
+```
+
+### 📌 Controllo delle risorse
+```bash
+kubectl get pods
+kubectl get virtualservice
+kubectl get gateway
+```
+
+### 📌 Test dell'accesso al servizio
+```bash
+curl http://x.x.x.x/hello
+```
 
