@@ -1,4 +1,12 @@
 # K3s Configuration Guide
+
+Di seguito sonno fornite diverse guide:
+- una configurazione veloce di k3s, vedi 
+- una configurazzione completa, vedi [K3s Cluster Setup Guide](#-k3s-cluster-setup-guide)
+
+# K3s Cluster Fast Guide
+
+
 # K3s Cluster Setup Guide
 
 ## Guida al Setup di un Cluster K3s
