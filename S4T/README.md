@@ -40,19 +40,19 @@ kompose convert
 ### 📌 Configurazione
 ```bash
 kubectl apply -f web-tcp-service.yaml,redis-leader-service.yaml,redis-replica-service.yaml,web-deployment.yaml,redis-leader-deployment.yaml,redis-replica-deployment.yaml
-service/web-tcp created
-service/redis-leader created
-service/redis-replica created
-deployment.apps/web created
-deployment.apps/redis-leader created
-deployment.apps/redis-replica created
+>> service/web-tcp created
+>> service/redis-leader created
+>> service/redis-replica created
+>> deployment.apps/web created
+>> deployment.apps/redis-leader created
+>>  deployment.apps/redis-replica created
 ```
 ### 📌 Verifica dei servizi
 ```bash
 kubectl describe svc web-tcp
 ...
 Type:                     LoadBalancer
-LoadBalancer Ingress:     192.168.1.240 (VIP)
+LoadBalancer Ingress:     x.x.x.x (VIP)
 Events:
   Type    Reason        Age   From                Message
   ----    ------        ----  ----                -------
