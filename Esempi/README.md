@@ -1,11 +1,14 @@
 # 📂 Esempi
-## Pre-requisiti
+## ⚠️ Pre-requisiti (Esempi 1,2,3)
 - Un LoadBalncer: Vedi [MetalLB](../MetalLB)
 - Un CNI: vedi [Calico](../Calico)
 
 ## 🟢 1. Prova per verificare il funzionamento
-- [Deployment nginx-hello-deployment](Esempi/ngnix-prova/nginx-hello-deployment.yaml)
-- [Git originale del deployment](https://gist.githubusercontent.com/sdenel/1bd2c8b5975393ababbcff9b57784e82/raw/f1b885349ba17cb2a81ca3899acc86c6ad150eb1/nginx-hello-world-deployment.yaml)
+### 📌 Link Utili
+- [🔗 Deployment nginx-hello-deployment](../Esempi/ngnix-prova/nginx-hello-deployment.yaml)
+- [🔗 Git originale del deployment](https://gist.githubusercontent.com/sdenel/1bd2c8b5975393ababbcff9b57784e82/raw/f1b885349ba17cb2a81ca3899acc86c6ad150eb1/nginx-hello-world-deployment.yaml)
+
+## Svolgimento
 
 📁 Creazione della directory di prova:
 ```bash
@@ -80,6 +83,52 @@ curl 192.x.x.x
 ```bash
 kubectl get pods -o wide
 ```
+
+## 🚀 4. Hello World! in Istio
+
+### ⚠️ Pre-requisiti
+- Un LoadBalncer: Vedi [MetalLB](../MetalLB)
+- Un CNI: vedi [Calico](../Calico)
+- [Istio](../Istio)
+
+### 📌 Link Utili
+
+- [🔗 Gateway VirtualService YAML](https://github.com/istio/istio/blob/master/samples/helloworld/helloworld-gateway.yaml) **--Modificare il controller col tuo**
+- [🔗 HelloPod YAML](https://github.com/istio/istio/blob/master/samples/helloworld/helloworld.yaml)
+- [🔗 Cartella esempi](../Esempi/Istio-Esempi)  
+
+### 📌 Creazione dei file di configurazione  
+```bash
+mkdir istiohello
+cd istiohello
+nano gateway-virtualservice.yaml
+nano podhello.yaml
+```
+
+### 📌 Verifica del controller Istio Ingress
+```bash
+kubectl get pods -n istio-ingress --show-labels
+>> Restituisce il nome del controller da inserire in gateway-virtualservice.yaml
+```
+
+### 📌 Applicazione delle configurazioni
+```bash
+kubectl apply -f gateway-virtualservice.yaml
+kubectl apply -f podhello.yaml
+```
+
+### 📌 Controllo delle risorse
+```bash
+kubectl get pods
+kubectl get virtualservice
+kubectl get gateway
+```
+
+### 📌 Test dell'accesso al servizio
+```bash
+curl http://x.x.x.x/hello
+```
+
 
 
 
