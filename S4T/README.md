@@ -156,6 +156,41 @@ NAME          GATEWAYS                  HOSTS   AGE
 iotronic-ui   ["iotronic-ui-gateway"]   ["*"]   11m
 ```
 
+Controlliamo il Gateway:
+```bash
+$ kubectl get gateway
+```
+
+🔎 Esempio di output:
+```bash
+NAME                  AGE
+iotronic-ui-gateway   12m
+```
+
+### 🌍 6. Test dell’accesso al servizio
+Utilizziamo curl per testare l'accesso alla UI di Iotronic tramite l'IP di istio-ingress:
+```bash
+$ curl x.x.x.x/iotronic-ui
+```
+
+🔎 Output atteso:
+```bash
+>> Apache Default Page
+```
+
+🔄 7. Configurare il Port Forwarding --opzionale tramite tailscale
+Per esporre il servizio localmente:
+```bash
+$ kubectl port-forward --address 0.0.0.0 svc/istio-ingress 8100:80 -n istio-ingress
+```
+
+Ora possiamo accedere alla UI da un browser utilizzando gli indirizzi seguenti:
+```bash
+>> http://100.122.136.8:8100/iotronic-ui
+>> http://100.122.136.8:8100/horizon/auth/login/?next=/horizon/
+```
+
+
 
 
 
