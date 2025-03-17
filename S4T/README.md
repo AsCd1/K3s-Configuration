@@ -72,7 +72,7 @@ Questa guida descrive come clonare, configurare e avviare **Stack4Things** su Ku
 
 ---
 
-### 📌 **1. Clonare il repository**
+### 📌 **1. Clonare il repository** -- OPZIONE1 NON DISPONIBILE
 Cloniamo il repository ufficiale di Stack4Things:  
 
 ```bash
@@ -85,7 +85,7 @@ cd Stack4Things_Container_Deployment/
 git checkout e6c8ad509e63fc5d77cfbe65a29470dee97f76ff  #(basta il token, magari cambiare)
 ```
 
-### ⚙️ **2. Configurare le variabili d’ambiente** (VERIFICARE L'ONRDINE DI QUESTO COMANDO)
+### ⚙️ **2. Configurare le variabili d’ambiente** - VALIDO CON OPZIONE 1
 Carichiamo le variabili d'ambiente definite nel file .env:
 ```bash
 export $(grep -v '^#' .env | xargs)   # Versione con `:`
