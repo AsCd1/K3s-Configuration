@@ -27,5 +27,5 @@ kubectl get pods
 kubectl get svc
 ```
 
-[Next: Sezione di Istio](../istioconf/README.md)
+## [Next: Sezione di Istio](../istioconf/README.md)
 
