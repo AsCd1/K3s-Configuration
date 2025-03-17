@@ -7,6 +7,7 @@
 - [Guida all'installazione su GitHub](https://github.com/kubernetes/kompose/blob/main/docs/installation.md#github-release)
 - [Getting Started](https://github.com/kubernetes/kompose/blob/main/docs/getting-started.md)
 - [Documentazione per Compose.YAML](https://kubernetes.io/docs/tasks/configure-pod-container/translate-compose-kubernetes/)
+- Una versione di kuberntes
 
 ## 🔹 Installation
 
