@@ -32,6 +32,8 @@ Di seguito sonno fornite diverse guide:
 ## 🚀 Installazione di K3s (Master Node Unico)
 ```bash
 curl -sfL https://get.k3s.io | sh -
+export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
+kubectl get nodes
 ```
 🔹 Cosa fa questo comando?
 - Installa K3s come master node
@@ -114,6 +116,24 @@ Per poter comunicare con il cluster, è necessario recuperare il certificato di 
     ```yaml
     server: https://<Contol Plane IP>:6443
     ```
+4. **Verifica la connessione al cluster**:
+
+   ⚠️ Configura il tuo ambiente:
+    ```bash
+    export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
+    ```
+
+    Esegui il comando:
+    ```bash
+    kubectl get nodes
+    ```
+   
+    Esempio di output:
+
+    ```
+    NAME            STATUS  ROLES                   AGE VERSION
+    ubuntuserver    Ready   control.plane,master    xx  xx
+    ```
 
 ## 4. Aggiungi i Worker Node
 
@@ -131,25 +151,6 @@ Ora puoi aggiungere i nodi di lavoro (worker nodes) al cluster.
 
     Sostituisci `<Contol Plane IP>` con l'IP del server (control plane) e `<YourToken>` con il token che hai ottenuto in precedenza.
 
-3. **Verifica la connessione al cluster**:
-
-   ⚠️ Configura il tuo ambiente:
-    ```bash
-    export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
-    ```
-
-    Dopo aver eseguito il comando sul nodo worker, torna al server e esegui il comando:
-    ```bash
-    kubectl get nodes
-    ```
-   
-    Esempio di output:
-
-    ```
-    NAME            STATUS  ROLES                   AGE VERSION
-    ubuntuserver    Ready   control.plane,master    xx  xx
-    ubuntuworker    Ready   <none>                  xx  xx
-    ```
 
 5. **Configurazione di `kubectl` sul Worker Node**:
 
