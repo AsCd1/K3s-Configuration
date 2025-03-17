@@ -166,27 +166,26 @@ ip route show
 kubectl get pods -A | grep -E "calico|flannel" #flannel è presente di default se non si segue l'installazione pulita
 ```
 
-## Installing Helm  
-[The Helm project](https://helm.sh/docs/intro/install/) provides two ways to fetch and install Helm. These are the official methods to get Helm releases. In addition to that, the Helm community provides methods to install Helm through different package managers. Installation through those methods can be found below the official methods.  
+## Installing Helm   
+Il [progetto Helm](https://helm.sh/docs/intro/install/) offre due metodi ufficiali per scaricare e installare Helm. Oltre a questi, la community di Helm fornisce anche altri metodi di installazione tramite diversi gestori di pacchetti.
 
-### From Script  
-Helm now has an installer script that will automatically grab the latest version of Helm and install it locally.  
-
-You can fetch that script, and then execute it locally. It's well documented so that you can read through it and understand what it is doing before you run it.  
-
+### 🚀 Installazione tramite Script  
+Helm fornisce uno script di installazione che scarica e installa automaticamente l'ultima versione di Helm sul tuo sistema.
+  
+Puoi scaricare lo script ed eseguirlo localmente. È ben documentato, quindi puoi leggerlo in anticipo per capire cosa fa prima di eseguirlo.
 ```bash
 curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
 chmod 700 get_helm.sh
 ./get_helm.sh
 ```
 
-you can also run if you want to live on the edge:
+Se vuoi usare l'ultima versione instabile, puoi anche eseguire:
 ```bash
 curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
 ```
 ## Install Cert-Manager  
  
-- This step is only required to use certificates issued by Rancher's generated CA (`ingress.tls.source=rancher`) or to request Let's Encrypt issued certificates (`ingress.tls.source=letsEncrypt`).  
+- Questo passaggio è necessario solo se devi utilizzare certificati emessi dalla CA generata da Rancher (ingress.tls.source=rancher) o richiedere certificati emessi da Let's Encrypt (ingress.tls.source=letsEncrypt).
 
 ```bash
 # Set the KUBECONFIG environment variable
