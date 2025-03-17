@@ -263,7 +263,7 @@ helm install metallb metallb/metallb
 
 ### Configurazione Layer2
 Creazione del file di configurazione per Layer 2:
-- [metallb-configuration](./MetalLB/metallb-config.yaml)
+- [metallb-configuration](./MetalLB/metallb-configuration.yaml)
 ```bash
 echo "Apri il file di configurazione: https://github.com/AsCd1/K3s-Configuration/blob/main/MetalLB/metallb-configuration.yaml"
 nano metallb-configuration.yaml
