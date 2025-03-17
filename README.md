@@ -612,12 +612,12 @@ export $(grep -v '^#' .env | sed 's/: /=/' | tr -d '"' | xargs)   # Versione con
 ### 📂 Contenuto della Cartella S4T
 
 All'interno della cartella troverai:
-- [**ComposeDeployment**](../S4T/ComposeDeployment)
+- [**ComposeDeployment**](./S4T/ComposeDeployment)
     - **`deployments/`** → Contiene i file YAML per la definizione dei **Pod**, **Deployment** e **Service** di S4T.
     - **`storage/`** → Definizioni di **PersistentVolumeClaim (PVC)** per la gestione dei dati.
     - **`.env`** → File con le variabili d’ambiente necessarie per l'installazione.  
     - **`configmaps/`** → Configurazioni personalizzate per i servizi di S4T in Kubernetes.
-- [ConfigurazioneIstio](../S4T/istioconf)
+- [ConfigurazioneIstio](./S4T/istioconf)
     - - **`istio/`** → Configurazioni di **Istio** per il bilanciamento del traffico e il gateway di accesso.
 
 ### 🚀 **Come Utilizzare i File**
