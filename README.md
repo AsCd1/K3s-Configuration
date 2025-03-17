@@ -539,7 +539,7 @@ kompose version
 ```
 ### 🔹 Esempio
 ### 📌 Link Utili
-- [🔗docker-compose.yaml](../Esempi/kompose/docker-compose.yaml)
+- [🔗docker-compose.yaml](./Esempi/kompose/docker-compose.yaml)
 ### 📌 Creazione Repository
 ```bash
 mkdir kompose-example
