@@ -7,7 +7,7 @@ Di seguito sonno fornite diverse guide:
 # K3s Rapid Setup ⚡
 
 
-# K3s Multi-Cluster Setup Guide
+# K3s Multi-Cluster Setup Guide 🛠
 
 ## Guida al Setup di un Cluster K3s
 
