@@ -4,24 +4,24 @@
 
 Creiamo una cartella per i file di configurazione di Istio:
 ```bash
-$ mkdir istioconf
+mkdir istioconf
 ```
 
 Apriamo un nuovo file per definire il Gateway e il VirtualService:
 ```bash
-$ nano gateway-virtualservice-istio.yaml
-$ kubectl apply -f .
+nano gateway-virtualservice-istio.yaml
+kubectl apply -f .
 ```
 
 Verifichiamo che le risorse siano state create correttamente:
 ```bash
-$ kubectl describe virtualservice iotronic-ui
+kubectl describe virtualservice iotronic-ui
 ```
 
 ### 📡 5. Controllo del Servizio Istio-Ingress
 Verifichiamo il servizio istio-ingress per ottenere l'IP pubblico del bilanciatore di carico:
 ```bash
-$ kubectl get svc istio-ingress -n istio-ingress
+kubectl get svc istio-ingress -n istio-ingress
 ```
 🔎 Esempio di output:
 ```bash
@@ -31,7 +31,7 @@ istio-ingress   LoadBalancer   10.x.x.x      x.x.x.x         15021:30152/TCP,80:
 
 Verifichiamo la creazione del VirtualService:
 ```bash
-$ kubectl get virtualservice
+kubectl get virtualservice
 ```
 
 🔎 Esempio di output:
@@ -42,7 +42,7 @@ iotronic-ui   ["iotronic-ui-gateway"]   ["*"]   11m
 
 Controlliamo il Gateway:
 ```bash
-$ kubectl get gateway
+kubectl get gateway
 ```
 
 🔎 Esempio di output:
