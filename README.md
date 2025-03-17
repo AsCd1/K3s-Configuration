@@ -4,24 +4,27 @@ Di seguito sonno fornite diverse guide:
 - una configurazione veloce di k3s, vedi 
 - una configurazzione completa, vedi [K3s Multi-Cluster Setup Guide](#-k3s-multi-cluster-setup-guide)
 
-K3s Deployment Guide
-│
-├── 📁 K3s-S4T Rapid Setup ⚡
-│   ├── 🚀 Installazione di K3s
-│   ├── 🔗 Clonazione S4T - OPZIONE2
-│   ├── 🔄 Conversione YAML (Kompose) - none
-│   ├── 📌 Deploy su Kubernetes
-│   └── ✅ Verifica dei Pod e dei Servizi
-│
-└── 📁 K3s-Calico-MetalLB-Istio-S4T Multi-Cluster Setup
-    ├── ⚙️ Installazione di K3s (senza Traefik)
-    ├── 🌐 Configurazione di Calico
-    ├── 📡 Setup di MetalLB
-    ├── 🚀 Deploy di Istio
-    ├── 🔗 Clonazione S4T - OPZIONE2
-    ├── 🔄 Conversione YAML (Kompose) - none
-    ├── 📌 Deploy su Kubernetes
-    └── ✅ Verifica dei Pod e dei Servizi
+## K3s Deployment Guide
+
+| **K3s Deployment Guide** | **Steps**                                 |
+|--------------------------|-------------------------------------------|
+| 📁 **K3s-S4T Rapid Setup ⚡** | 1. 🚀 Installazione di K3s             |
+|                          | 2. 🔗 Clonazione S4T - OPZIONE2           |
+|                          | 3. 🔄 Conversione YAML (Kompose) - none   |
+|                          | 4. 📌 Deploy su Kubernetes                |
+|                          | 5. ✅ Verifica dei Pod e dei Servizi      |
+|                          |                                           |
+| 📁 **K3s-Calico-MetalLB-Istio-S4T Multi-Cluster Setup** | 1. ⚙️ Installazione di K3s (senza Traefik) |
+|                          | 2. 🌐 Configurazione di Calico            |
+|                          | 3. 📡 Setup di MetalLB                    |
+|                          | 4. 🚀 Deploy di Istio                    |
+|                          | 5. 🔗 Clonazione S4T - OPZIONE2           |
+|                          | 6. 🔄 Conversione YAML (Kompose) - none   |
+|                          | 7. 📌 Deploy su Kubernetes                |
+|                          | 8. ✅ Verifica dei Pod e dei Servizi      |
+
+
+
 
 # K3s Rapid Setup ⚡
 - [Quick-Start-K3s](https://docs.k3s.io/quick-start)
