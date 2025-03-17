@@ -4,7 +4,7 @@
 ## ⚙️ Pre-requisiti
 - Una versione di kubernetes
 - Istio
-- La versione di [S4T](./ComposeDeployment) per kubernetes
+- La versione di [S4T](../ComposeDeployment) per kubernetes
 
 Creiamo una cartella per i file di configurazione di Istio:
 ```bash
