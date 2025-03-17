@@ -118,7 +118,7 @@ $ kubectl get svc
 ```
 
 ### 🛠 4. Creazione del Gateway e VirtualService per Istio
-- Definizione file yaml [qui](./istioconf)
+- 📁 Definizione file yaml [qui](./istioconf)
 
 Creiamo una cartella per i file di configurazione di Istio:
 ```bash
