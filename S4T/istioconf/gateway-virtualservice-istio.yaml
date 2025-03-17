@@ -1,7 +1,7 @@
 apiVersion: networking.istio.io/v1
 kind: Gateway
 metadata:
-  name: iotronic-ui-gateway  # Cambia nome da helloworld-gateway a iotronic-ui-gateway
+  name: iotronic-ui-gateway  
 spec:
   selector:
     istio: ingress  # Usa il controller Istio predefinito
@@ -17,7 +17,7 @@ spec:
 apiVersion: networking.istio.io/v1
 kind: VirtualService
 metadata:
-  name: iotronic-ui  # Cambia nome da helloworld a iotronic-ui
+  name: iotronic-ui  
 spec:
   hosts:
   - "*"
@@ -39,6 +39,6 @@ spec:
         prefix: /horizon
     route:
     - destination:
-        host: iotronic-ui  # Assicurati che questo sia il nome corretto del servizio Horizon
+        host: iotronic-ui  
         port:
           number: 80
