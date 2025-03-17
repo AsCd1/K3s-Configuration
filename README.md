@@ -133,12 +133,12 @@ Ora puoi aggiungere i nodi di lavoro (worker nodes) al cluster.
 
 3. **Verifica la connessione al cluster**:
 
-    Dopo aver eseguito il comando sul nodo worker, torna al server e esegui il comando:
-
    ⚠️ Configura il tuo ambiente:
     ```bash
     export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
     ```
+
+    Dopo aver eseguito il comando sul nodo worker, torna al server e esegui il comando:
     ```bash
     kubectl get nodes
     ```
