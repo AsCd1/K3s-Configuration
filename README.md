@@ -5,7 +5,17 @@ Di seguito sonno fornite diverse guide:
 - una configurazzione completa, vedi [K3s Multi-Cluster Setup Guide](#-k3s-multi-cluster-setup-guide)
 
 # K3s Rapid Setup ⚡
-- Da inserire
+- [Quick-Start-K3s](https://docs.k3s.io/quick-start)
+
+## 🚀 Installazione di K3s (Master Node Unico)
+```bash
+curl -sfL https://get.k3s.io | sh -
+```
+🔹 Cosa fa questo comando?
+- Installa K3s come master node
+- Avvia automaticamente il servizio
+- ⚠️ Nota: Configura kubectl per gestire il cluster
+
 
 # K3s Multi-Cluster Setup Guide 🛠
 
