@@ -16,6 +16,9 @@ curl -sfL https://get.k3s.io | sh -
 - Avvia automaticamente il servizio
 - ⚠️ Nota: Configura kubectl per gestire il cluster
  S4T - Stack4Things Deployment
+- ⚠️ Nota: In questa configurazione non sono presenti Calico, istio e MetalLb necessari per alcuni esempi
+- Con questa configurazione si otterrà S4T con servizi interni al cluster in una configurazione minimale ma configurabile a piacere.
+
 ## [Muoversi direttamente alla sezione S4t](#-s4t---stack4things-deployment)
 
 # K3s Multi-Cluster Setup Guide 🛠
