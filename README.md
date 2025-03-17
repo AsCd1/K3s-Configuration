@@ -480,7 +480,7 @@ istio-ingress   LoadBalancer   x.x.x.x         x.x.x.x         15021:30268/TCP,8
 
 - [🔗 Gateway VirtualService YAML](https://github.com/istio/istio/blob/master/samples/helloworld/helloworld-gateway.yaml) **--Modificare il controller col tuo**
 - [🔗 HelloPod YAML](https://github.com/istio/istio/blob/master/samples/helloworld/helloworld.yaml)
-- [🔗 Cartella esempi](./Esempi/Istio-Esempi/)  
+- [🔗 Cartella esempi](./Esempi/Istio-Esempi/) -- funzionante con l'ultimo aggiornamento di Istio: 17/03/25
 
 ### 📌 Creazione dei file di configurazione  
 ```bash
