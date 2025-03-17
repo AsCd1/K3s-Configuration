@@ -1,4 +1,4 @@
-# 📌 **1. .zip**  -- OPZIONE 2 DISPONIBILE
+# 📌 **1. .zip**
 ## 📂 Contenuto della Cartella ComposeDeployment
 
 All'interno della cartella troverai:
