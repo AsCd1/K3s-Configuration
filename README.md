@@ -732,6 +732,6 @@ kubectl port-forward --address 0.0.0.0 svc/istio-ingress 8100:80 -n istio-ingres
 
 Ora possiamo accedere alla UI da un browser utilizzando gli indirizzi seguenti:
 ```bash
->> http://100.122.136.8:8100/iotronic-ui
->> http://100.122.136.8:8100/horizon/auth/login/?next=/horizon/
+>> http://x.x.x.x:8100/iotronic-ui
+>> http://x.x.x.x:8100/horizon/auth/login/?next=/horizon/
 ```
