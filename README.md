@@ -11,7 +11,7 @@ Di seguito sonno fornite diverse guide:
 
 ## Guida al Setup di un Cluster K3s
 
-Questa guida ti aiuterà a configurare un cluster K3s utilizzando una macchina come **server** (control plane) e una o più macchine come **worker nodes**. La guida segue un'installazione base con Calico disabilitato. Puoi trovare maggiori dettagli su questa guida [qui](https://www.fullstaq.com/knowledge-hub/blogs/setting-up-your-own-k3s-home-cluster).
+Questa guida ti aiuterà a configurare un cluster K3s utilizzando una macchina come **server** (control plane) e una o più macchine come **worker nodes**.
 
 ### Nota:
 1. Se preferisci eseguire un'installazione pulita di Calico, salta alla sezione dedicata a Calico più avanti.
