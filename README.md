@@ -592,21 +592,21 @@ Questa guida descrive come clonare, configurare e avviare **Stack4Things** su Ku
 Cloniamo il repository ufficiale di Stack4Things:  
 
 ```bash
-$ git clone https://github.com/MDSLab/Stack4Things_Container_Deployment.git
+git clone https://github.com/MDSLab/Stack4Things_Container_Deployment.git
 ```
 
 Spostiamoci nella cartella del progetto:
 ```bash
-$ cd Stack4Things_Container_Deployment/
-$ git checkout e6c8ad509e63fc5d77cfbe65a29470dee97f76ff  #(basta il token, magari cambiare)
+cd Stack4Things_Container_Deployment/
+git checkout e6c8ad509e63fc5d77cfbe65a29470dee97f76ff  #(basta il token, magari cambiare)
 ```
 
 ### ⚙️ **2. Configurare le variabili d’ambiente** (VERIFICARE L'ONRDINE DI QUESTO COMANDO)
 Carichiamo le variabili d'ambiente definite nel file .env:
 ```bash
-$ export $(grep -v '^#' .env | xargs)   # Versione con `:`
+export $(grep -v '^#' .env | xargs)   # Versione con `:`
                 # Alternativa:
-$ export $(grep -v '^#' .env | sed 's/: /=/' | tr -d '"' | xargs)   # Versione con `=`
+export $(grep -v '^#' .env | sed 's/: /=/' | tr -d '"' | xargs)   # Versione con `=`
 ```
 
 ## 📌 **1. .zip**  -- OPZIONE 2 DISPONIBILE
@@ -640,26 +640,26 @@ kubectl get svc
 ### 🔄 3. Convertire il file docker-compose.yml in manifest Kubernetes -- SOLO CON OPZIONE 1
 Kompose ci permette di convertire un file docker-compose in configurazioni Kubernetes:
 ```bash
-$ kompose convert -f docker-compose.yml
+kompose convert -f docker-compose.yml
 ```
 Controlliamo il file iotronic-db-deployment.yaml per assicurarci che tutti i campi siano stati compilati correttamente:
 ```bash
-$ cat iotronic-db-deployment.yaml
+cat iotronic-db-deployment.yaml
 ```
 
 Se tutto è corretto, applichiamo i file al cluster:
 ```bash
-$ kubectl apply -f .
+kubectl apply -f .
 ```
 
 Verifichiamo che i pod siano in esecuzione:
 ```bash
-$ kubectl get pods
+kubectl get pods
 ```
 
 Verifichiamo i servizi (service) disponibili:
 ```bash
-$ kubectl get svc
+kubectl get svc
 ```
 
 ### 🛠 4. Creazione del Gateway e VirtualService per Istio -- VALIDO PER ENTRAMBE LE OPZIONI
@@ -667,24 +667,24 @@ $ kubectl get svc
 
 Creiamo una cartella per i file di configurazione di Istio:
 ```bash
-$ mkdir istioconf
+mkdir istioconf
 ```
 
 Apriamo un nuovo file per definire il Gateway e il VirtualService:
 ```bash
-$ nano gateway-virtualservice-istio.yaml
-$ kubectl apply -f .
+nano gateway-virtualservice-istio.yaml
+kubectl apply -f .
 ```
 
 Verifichiamo che le risorse siano state create correttamente:
 ```bash
-$ kubectl describe virtualservice iotronic-ui
+kubectl describe virtualservice iotronic-ui
 ```
 
 ### 📡 5. Controllo del Servizio Istio-Ingress
 Verifichiamo il servizio istio-ingress per ottenere l'IP pubblico del bilanciatore di carico:
 ```bash
-$ kubectl get svc istio-ingress -n istio-ingress
+kubectl get svc istio-ingress -n istio-ingress
 ```
 🔎 Esempio di output:
 ```bash
@@ -694,7 +694,7 @@ istio-ingress   LoadBalancer   10.x.x.x      x.x.x.x         15021:30152/TCP,80:
 
 Verifichiamo la creazione del VirtualService:
 ```bash
-$ kubectl get virtualservice
+kubectl get virtualservice
 ```
 
 🔎 Esempio di output:
@@ -705,7 +705,7 @@ iotronic-ui   ["iotronic-ui-gateway"]   ["*"]   11m
 
 Controlliamo il Gateway:
 ```bash
-$ kubectl get gateway
+kubectl get gateway
 ```
 
 🔎 Esempio di output:
@@ -717,7 +717,7 @@ iotronic-ui-gateway   12m
 ### 🌍 6. Test dell’accesso al servizio
 Utilizziamo curl per testare l'accesso alla UI di Iotronic tramite l'IP di istio-ingress:
 ```bash
-$ curl x.x.x.x/iotronic-ui
+curl x.x.x.x/iotronic-ui
 ```
 
 🔎 Output atteso:
@@ -728,7 +728,7 @@ $ curl x.x.x.x/iotronic-ui
 🔄 7. Configurare il Port Forwarding --opzionale tramite tailscale
 Per esporre il servizio localmente:
 ```bash
-$ kubectl port-forward --address 0.0.0.0 svc/istio-ingress 8100:80 -n istio-ingress
+kubectl port-forward --address 0.0.0.0 svc/istio-ingress 8100:80 -n istio-ingress
 ```
 
 Ora possiamo accedere alla UI da un browser utilizzando gli indirizzi seguenti:
