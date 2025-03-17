@@ -22,6 +22,11 @@ curl -sfL https://get.k3s.io | sh -
 ## [Muoversi direttamente alla sezione S4t](#-s4t---stack4things-deployment)
 
 # K3s Multi-Cluster Setup Guide 🛠
+Con la seguente guida si otterrà una configurazione con:
+1. Calico come CNI
+2. MeatalLB come Loadbalancer
+3. Istio come Gateway
+4. S4T
 
 ## Guida al Setup di un Cluster K3s
 
