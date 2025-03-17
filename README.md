@@ -600,14 +600,6 @@ cd Stack4Things_Container_Deployment/
 git checkout e6c8ad509e63fc5d77cfbe65a29470dee97f76ff  #(basta il token, magari cambiare)
 ```
 
-### ⚙️ **2. Configurare le variabili d’ambiente** (VERIFICARE L'ONRDINE DI QUESTO COMANDO)
-Carichiamo le variabili d'ambiente definite nel file .env:
-```bash
-export $(grep -v '^#' .env | xargs)   # Versione con `:`
-                # Alternativa:
-export $(grep -v '^#' .env | sed 's/: /=/' | tr -d '"' | xargs)   # Versione con `=`
-```
-
 ## 📌 **1. .zip**  -- OPZIONE 2 DISPONIBILE
 ### 📂 Contenuto della Cartella S4T
 
@@ -634,6 +626,14 @@ kubectl get pods
 5. Verificare i servizi disponibili:
 ```bash
 kubectl get svc
+```
+
+### ⚙️ **2. Configurare le variabili d’ambiente** -- SOLO CON OPZIONE 1
+Carichiamo le variabili d'ambiente definite nel file .env:
+```bash
+export $(grep -v '^#' .env | xargs)   # Versione con `:`
+                # Alternativa:
+export $(grep -v '^#' .env | sed 's/: /=/' | tr -d '"' | xargs)   # Versione con `=`
 ```
 
 ### 🔄 3. Convertire il file docker-compose.yml in manifest Kubernetes -- SOLO CON OPZIONE 1
