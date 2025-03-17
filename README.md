@@ -16,7 +16,7 @@ curl -sfL https://get.k3s.io | sh -
 - Avvia automaticamente il servizio
 - ⚠️ Nota: Configura kubectl per gestire il cluster
  S4T - Stack4Things Deployment
-## [Muoversi direttamente alla sezione S4t](#-s4t-stack4things-deployment)
+## [Muoversi direttamente alla sezione S4t](#-s4t---stack4things-deployment)
 
 # K3s Multi-Cluster Setup Guide 🛠
 
