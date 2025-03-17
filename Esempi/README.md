@@ -133,7 +133,6 @@ curl http://x.x.x.x/hello
 ### ⚠️ Pre-requisiti
 - Un LoadBalncer: Vedi [MetalLB](../MetalLB)
 - Un CNI: vedi [Calico](../Calico)
-- [Istio](../Istio)
 - [Kompose](../S4T) installato
 
 ### 📌 Link Utili
