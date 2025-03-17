@@ -2,7 +2,7 @@
 
 Di seguito sonno fornite diverse guide:
 - una configurazione veloce di k3s, vedi [K3s Rapid Setup](#k3s-rapid-setup-)
-- una configurazzione completa, vedi [K3s Multi-Cluster Setup Guide](k3s-multi-cluster-setup-guide-)
+- una configurazzione completa, vedi [K3s Multi-Cluster Setup Guide](#k3s-multi-cluster-setup-guide-)
 
 ## K3s Deployment Guide
 
