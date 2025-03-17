@@ -276,7 +276,7 @@ nano l2advertisement.yaml
 Apply della configurazione:
 ```bash
 kubectl apply -f l2advertisement.yaml
-kubectl apply -f metallb-config.yaml
+kubectl apply -f metallb-configuration.yaml
 ```
 Verifica della configurazione:
 ```bash
