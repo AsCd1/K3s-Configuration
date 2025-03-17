@@ -37,7 +37,7 @@ curl -sfL https://get.k3s.io | sh -
 - Installa K3s come master node
 - Avvia automaticamente il servizio
 - ⚠️ Nota: Configura kubectl per gestire il cluster
- S4T - Stack4Things Deployment
+ S4T - Stack4Things Deployment 
 - ⚠️ Nota: In questa configurazione non sono presenti Calico, istio e MetalLb necessari per alcuni esempi
 - ⚠️ Con questa configurazione si otterrà S4T con servizi interni al cluster in una configurazione minimale ma configurabile a piacere.
 
@@ -138,7 +138,11 @@ Ora puoi aggiungere i nodi di lavoro (worker nodes) al cluster.
     ```bash
     kubectl get nodes
     ```
-
+   
+    ⚠️ Configura il tuo ambiente:
+    ```bash
+    export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
+    ```
     Esempio di output:
 
     ```
@@ -147,13 +151,13 @@ Ora puoi aggiungere i nodi di lavoro (worker nodes) al cluster.
     ubuntuworker    Ready   <none>                  xx  xx
     ```
 
-4. **Configurazione di `kubectl` sul Worker Node**:
+5. **Configurazione di `kubectl` sul Worker Node**:
 
     - Crea un file `~/.kube/config` sul nodo worker.
     - Copia il contenuto del file `k3s.yaml` dal server (control plane) in questo file.
     - Modifica il campo `server` per includere l'IP del server.
 
-5. **Configura `kubectl`**:
+6. **Configura `kubectl`**:
 
     Esegui i seguenti comandi sul nodo worker per impostare il tuo ambiente Kubernetes:
 
