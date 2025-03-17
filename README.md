@@ -588,7 +588,7 @@ Questa guida descrive come clonare, configurare e avviare **Stack4Things** su Ku
 
 ---
 
-### 📌 **1. Clonare il repository**
+### 📌 **1. Clonare il repository**  --OPZIONE 1 NON DISPONIBILE
 Cloniamo il repository ufficiale di Stack4Things:  
 
 ```bash
@@ -609,7 +609,35 @@ $ export $(grep -v '^#' .env | xargs)   # Versione con `:`
 $ export $(grep -v '^#' .env | sed 's/: /=/' | tr -d '"' | xargs)   # Versione con `=`
 ```
 
-### 🔄 3. Convertire il file docker-compose.yml in manifest Kubernetes
+## 📌 **1. .zip**  -- OPZIONE 2 DISPONIBILE
+### 📂 Contenuto della Cartella S4T
+
+All'interno della cartella troverai:
+- [**ComposeDeployment**](../S4T/ComposeDeployment)
+    - **`deployments/`** → Contiene i file YAML per la definizione dei **Pod**, **Deployment** e **Service** di S4T.
+    - **`storage/`** → Definizioni di **PersistentVolumeClaim (PVC)** per la gestione dei dati.
+    - **`.env`** → File con le variabili d’ambiente necessarie per l'installazione.  
+    - **`configmaps/`** → Configurazioni personalizzate per i servizi di S4T in Kubernetes.
+- [ConfigurazioneIstio](../S4T/istioconf)
+    - - **`istio/`** → Configurazioni di **Istio** per il bilanciamento del traffico e il gateway di accesso.
+
+### 🚀 **Come Utilizzare i File**
+1. **Estrarre la cartella ZIP** sul proprio sistema.
+2. **Accedere alla cartella**
+3. Applicare i file YAML al cluster Kubernetes:
+```bash
+Kubectl apply -f .
+```
+4. Verificare che i Pod siano attivi:
+```bash
+kubectl get pods
+```
+5. Verificare i servizi disponibili:
+```bash
+kubectl get svc
+```
+
+### 🔄 3. Convertire il file docker-compose.yml in manifest Kubernetes -- SOLO CON OPZIONE 1
 Kompose ci permette di convertire un file docker-compose in configurazioni Kubernetes:
 ```bash
 $ kompose convert -f docker-compose.yml
@@ -634,7 +662,7 @@ Verifichiamo i servizi (service) disponibili:
 $ kubectl get svc
 ```
 
-### 🛠 4. Creazione del Gateway e VirtualService per Istio
+### 🛠 4. Creazione del Gateway e VirtualService per Istio -- VALIDO PER ENTRAMBE LE OPZIONI
 - 📁 Definizione file yaml [qui](./S4T/istioconf)
 
 Creiamo una cartella per i file di configurazione di Istio:
