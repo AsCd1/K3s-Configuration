@@ -1,6 +1,10 @@
 # 🛠 Creazione del Gateway e VirtualService per Istio
 - 📁 Definizione file yaml [qui](./istioconf)
 
+## ⚙️ Pre-requisiti
+- Una versione di kubernetes
+- Istio
+- La versione di [S4T](./ComposeDeployment) per kubernetes
 
 Creiamo una cartella per i file di configurazione di Istio:
 ```bash
