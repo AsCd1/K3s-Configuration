@@ -1,4 +1,7 @@
 # 📌 **1. .zip**
+## ⚙️ Pre-requisiti
+- Una versione di kubernetes con CNI
+
 ## 📂 Contenuto della Cartella ComposeDeployment
 
 All'interno della cartella troverai:
