@@ -59,7 +59,7 @@ Questa guida ti aiuterà a configurare un cluster K3s utilizzando una macchina c
 
 ### Nota:
 1. Se preferisci eseguire un'installazione pulita di Calico, salta alla sezione dedicata a Calico più avanti.
-2. Potrebbe essere necessario utilizzare gli IP interni delle macchine. (LASCIARE?)
+2. Potrebbe essere necessario utilizzare gli IP interni delle macchine.
 
 ## 1. Installazione del Server K3s
 
