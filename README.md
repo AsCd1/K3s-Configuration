@@ -180,6 +180,15 @@ Ora puoi aggiungere i nodi di lavoro (worker nodes) al cluster.
 
 Con questi passaggi avrai un cluster K3s funzionante con un server e uno o più nodi worker.
 
+## Installazione di una singola macchina
+Invece di installare un master ed un worker si può utilizzare una singolo nodo:
+```bash
+curl -sfL https://get.k3s.io | sh -
+sudo chmod 644 /etc/rancher/k3s/k3s.yaml
+export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
+kubectl get nodes
+```
+
 ## Calico
 
 Calico è un plugin di rete per Kubernetes che fornisce networking e sicurezza per i pod. Può essere installato in due modi principali:
