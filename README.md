@@ -343,6 +343,9 @@ kubectl get ipaddresspools -n metallb-system
 
 kubectl get l2advertisements -n metallb-system
 >> Output: Nome e range IP
+
+kubectl get pods -n metallb-system
+kubectl get svc -A
 ```
 ## Esempi
 ### 1. Prova per verificare il funzionamento
