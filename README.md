@@ -109,9 +109,9 @@ Per poter comunicare con il cluster, è necessario recuperare il certificato di 
     sudo cat /etc/rancher/k3s/k3s.yaml
     ```
 
-2. **Salva il contenuto del file `k3s.yaml`** sul tuo computer nella directory `~/.kube/` come un file di configurazione personalizzato (`<nome del tuo file>.yaml`).
+2. **Salva il contenuto del file `k3s.yaml`** sul *nodo worker* `~/.kube/` come un file di configurazione personalizzato (`<nome del tuo file>.yaml`).
 
-3. **Modifica il file** sostituendo l'IP del server con l'IP corretto del control plane (Server Host) e assicurati che il server utilizzi HTTPS.
+3. **Modifica il file** sostituendo l'IP del server con l'IP corretto del control plane (Server Host) e assicurati che il server utilizzi HTTPS, sia sul nodo master (K3s) e sul nodo worker (`~/.kube/<nome del tuo file>.yaml`).
 
     Esempio di modifica del file `k3s.yaml`:
     ```yaml
@@ -121,6 +121,7 @@ Per poter comunicare con il cluster, è necessario recuperare il certificato di 
 
    ⚠️ Configura il tuo ambiente:
     ```bash
+    sudo chmod 644 /etc/rancher/k3s/k3s.yaml
     export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
     ```
 
@@ -155,7 +156,7 @@ Ora puoi aggiungere i nodi di lavoro (worker nodes) al cluster.
 
 5. **Configurazione di `kubectl` sul Worker Node**:
 
-    - Crea un file `~/.kube/config` sul nodo worker.
+    - Crea un file `~/.kube/config` sul nodo worker o utilizza quello creato in precedenza.
     - Copia il contenuto del file `k3s.yaml` dal server (control plane) in questo file.
     - Modifica il campo `server` per includere l'IP del server.
 
@@ -164,7 +165,8 @@ Ora puoi aggiungere i nodi di lavoro (worker nodes) al cluster.
     Esegui i seguenti comandi sul nodo worker per impostare il tuo ambiente Kubernetes:
 
     ```bash
-    export KUBECONFIG=~/.kube/config
+    sudo chmod 644 /etc/rancher/k3s/k3s.yaml
+    export KUBECONFIG=~/.kube/<nome del tuo file>.yaml
     kubectl get nodes
     ```
 
